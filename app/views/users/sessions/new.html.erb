@@ -6,17 +6,13 @@
           <div class="card-body box-body">
             <h1 class="login-title mt-4">Welcome Back</h1>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="input-group mb-3 login-input">
-                <div class="input-group-prepend">
-                  <span class="input-group-text bg-white"><i class="fa fa-envelope-o"></i></span>
-                </div>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control border-left-0 bg-white", placeholder: "Email Address" %>
+              <div class="form-group">
+                <span class="fa fa-envelope-o form-control-icon"></span>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control border input-custom", placeholder: "Email Address" %>
               </div>
-              <div class="input-group mb-3 login-input">
-                <div class="input-group-prepend">
-                  <span class="input-group-text bg-white"><i class="fa fa-lock"></i></span>
-                </div>
-                <%= f.password_field :password, autocomplete: "current-password", class: "form-control border-left-0 bg-white", placeholder: "Password" %>
+              <div class="form-group">
+                <span class="fa fa-lock form-control-icon"></span>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control border input-custom", placeholder: "Password" %>
               </div>
               <div class="login-links text-right">
                 <%= link_to "Forgot password?", "javascript:void(0)" %>
@@ -25,13 +21,6 @@
                 <%= f.submit "Log In", class: "btn btn-primary btn-block" %>
               </div>
             <% end %>
-            <div class="login-links link-signin text-center mt-5">
-              <p class="mb-0">
-                Log In with 
-                <a href="javascript:void(0)">Single Sign-On</a>
-                instead.
-              </p>
-            </div>
           </div>
         </div>
       </div>

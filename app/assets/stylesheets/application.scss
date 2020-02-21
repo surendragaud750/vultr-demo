@@ -1,4 +1,10 @@
+/* Import gems */
 @import "bootstrap";
-@import "login";
-@import "dashboard";
 @import "font-awesome";
+
+/* Import login page css */
+@import "login";
+
+/* Import dashboard page css */
+@import "dashboard";
+@import "material-dashboard";

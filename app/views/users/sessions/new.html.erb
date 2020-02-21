@@ -1,26 +1,44 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="background-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-8 mx-lg-auto">
+        <div class="card mt-5 mb-5 login-box ml-4 mr-4 border-0">
+          <div class="card-body box-body">
+            <h1 class="login-title">Welcome Back</h1>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="input-group mb-3 login-input">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-white"><i class="fa fa-envelope-o"></i></span>
+                </div>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control border-left-0 bg-white", placeholder: "Email Address" %>
+              </div>
+              <div class="input-group mb-3 login-input">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-white"><i class="fa fa-lock"></i></span>
+                </div>
+                <%= f.password_field :password, autocomplete: "current-password", class: "form-control border-left-0 bg-white", placeholder: "Password" %>
+              </div>
+              <div class="login-links text-right">
+                <%= link_to "Forgot password?", "javascript:void(0)" %>
+              </div>
+              <div class="login-button mt-4 pt-2">
+                <%= f.submit "Log In", class: "btn btn-primary btn-block" %>
+              </div>
+            <% end %>
+            <div class="login-links link-signin text-center mt-5">
+              <p class="mb-0">
+                Log In with 
+                <a href="javascript:void(0)">Single Sign-On</a>
+                instead.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </div>  
+</div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+<style type="text/css">
+  .lock-font-size { font-size: 1.3rem; }
+</style>

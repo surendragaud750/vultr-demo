@@ -1,5 +1,5 @@
 <div class="wrapper ">
-  <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/images/sidebar-1.jpg">
+  <div class="sidebar" data-color="purple" data-background-color="white" data-image="<%= asset_path 'bg2.jpg' %>">
     <div class="logo">
       <a href="http://www.creative-tim.com" class="simple-text logo-normal">
         Creative Tim
@@ -13,7 +13,13 @@
             <p>Dashboard</p>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
+          <a class="nav-link" href="./products.html">
+            <i class="fa fa-product-hunt"></i>
+            <p>Products</p>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
           <a class="nav-link" href="./user.html">
             <i class="material-icons">person</i>
             <p>User Profile</p>
@@ -60,7 +66,7 @@
             <i class="material-icons">unarchive</i>
             <p>Upgrade to PRO</p>
           </a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>

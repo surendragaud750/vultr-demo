@@ -14,6 +14,10 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+// Material js
+//= require material-dashboard
+
 // Core JS Files   -->
 //= require perfect-scrollbar.jquery.min
 

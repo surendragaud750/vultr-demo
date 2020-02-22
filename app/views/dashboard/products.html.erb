@@ -3,7 +3,7 @@
   <div class="main-panel">
     <%= render 'layouts/partials/navbar' %>
 		<div class="content">
-			<form action="/create_product" method="post">
+			<%= form_for :products, url: :create_product, html: { method: :post } do |f| %>
 				<div class="container-fluid">
 					<div class="choose-server-section">
 						<div class="product-heading">
@@ -11,7 +11,7 @@
 						</div>
 						<div class="row">
 				      <div class="col-lg-3 col-md-6 col-sm-6">
-				      	<input type="radio" id="product-radio-1" value= "Large" class="radio isHidden" name="products[server]">
+				      	<%= radio_button_tag 'products[server]', "Large", true, class: "radio isHidden", id: "product-radio-1" %>
 					      <label for="product-radio-1" class="label w-100">
 					        <div class="card text-center rounded-0 product-card" class="label">
 					        	<span class="deploy_checkbox_checkmark"></span>
@@ -23,7 +23,7 @@
 					      </label>  
 				      </div>
 				      <div class="col-lg-3 col-md-6 col-sm-6">
-				        <input type="radio" id="product-radio-2" value= "Medium" class="radio isHidden" name="products[server]">
+				        <%= radio_button_tag 'products[server]', "Medium", nil, class: "radio isHidden", id: "product-radio-2" %>
 					      <label for="product-radio-2" class="label w-100">
 					        <div class="card text-center rounded-0 product-card" class="label">
 					        	<span class="deploy_checkbox_checkmark"></span>
@@ -35,9 +35,8 @@
 					      </label> 
 				      </div>
 				      <div class="col-lg-3 col-md-6 col-sm-6">
-				        <input type="radio" id="product-radio-3" value= "Small" class="radio isHidden" name="products[server]">
-					      <label for="product-radio-3" class="label w-100">
-					      
+				        <%= radio_button_tag 'products[server]', "Small", nil, class: "radio isHidden", id: "product-radio-3" %>
+					      <label for="product-radio-3" class="label w-100">					      
 					        <div class="card text-center rounded-0 product-card" class="label">
 					        	<span class="deploy_checkbox_checkmark"></span>
 					        	<%= image_tag "card1.svg", class: "card1-img" %>
@@ -85,7 +84,7 @@
 							  <div class="tab-pane fade show active" id="allLocation" role="tabpanel" aria-labelledby="allLocation-tab">
 							  	<div class="row">
 							  		<div class="col-lg-4 col-md-6 col-sm-6">
-							      	<input type="radio" id="all-location-radio-1" value="Canberra" class="radio isHidden" name="products[server_location]">
+							      	<%= radio_button_tag 'products[server_location]', "Canberra", true, class: "radio isHidden", id: "all-location-radio-1" %>
 								      <label for="all-location-radio-1" class="label w-100">
 								        <div class="card text-center rounded-0 product-card" class="label">
 								        	<div class="media p-3">
@@ -100,7 +99,7 @@
 								      </label>  
 							      </div>
 							      <div class="col-lg-4 col-md-6 col-sm-6">
-							      	<input type="radio" id="all-location-radio-2" value="Sydney" class="radio isHidden" name="products[server_location]">
+							      	<%= radio_button_tag 'products[server_location]', "Sydney", nil, class: "radio isHidden", id: "all-location-radio-2" %>
 								      <label for="all-location-radio-2" class="label w-100">
 								        <div class="card text-center rounded-0 product-card" class="label">
 								        	<div class="media p-3">
@@ -123,15 +122,20 @@
 							</div>
 			      </div>
 				  </div>
-				  <div class="server-location">
+				  <div class="server-type">
 						<div class="product-heading">
-							<h4 class="mb-0 mt-3">Server Location</h4>
+							<h4 class="mb-0 mt-3">Server Type</h4>
 						</div>
 						<div class="pl-0 mt-4">
 							<ul class="nav nav-tabs" id="myTab" role="tablist">
 							  <li class="nav-item">
-								  <a class="nav-link server-tab pl-0 active" id="allLocation-tab" data-toggle="tab" href="#allLocation" role="tab" aria-controls="allLocation" aria-selected="true">
-								  	<font>All Locations</font>
+								  <a class="nav-link server-tab pl-0 active" id="serverType64-tab" data-toggle="tab" href="#serverType64" role="tab" aria-controls="serverType64" aria-selected="true">
+								  	<font>64 bit OS</font>
+								  </a>
+							  </li>
+							  <li class="nav-item">
+								  <a class="nav-link server-tab pl-0" id="serverType32-tab" data-toggle="tab" href="#serverType32" role="tab" aria-controls="serverType32" aria-selected="true">
+								  	<font>32 bit OS</font>
 								  </a>
 							  </li>
 							  <!-- <li class="nav-item">
@@ -156,33 +160,67 @@
 							  </li> -->
 							</ul>
 							<div class="tab-content" id="myTabContent">
-							  <div class="tab-pane fade show active" id="allLocation" role="tabpanel" aria-labelledby="allLocation-tab">
+							  <div class="tab-pane fade show active" id="serverType64" role="tabpanel" aria-labelledby="serverType64-tab">
 							  	<div class="row">
 							  		<div class="col-lg-4 col-md-6 col-sm-6">
-							      	<input type="radio" id="all-location-radio-1" value="Canberra" class="radio isHidden" name="products[server_location]">
-								      <label for="all-location-radio-1" class="label w-100">
+							      	<%= radio_button_tag 'products[server_type]', "CentOS 64", nil, class: "radio isHidden", id: "type-radio-1" %>
+								      <label for="type-radio-1" class="label w-100">
 								        <div class="card text-center rounded-0 product-card" class="label">
 								        	<div class="media p-3">
 								        	  <span class="deploy_checkbox_checkmark"></span>
-													  <%= image_tag "australia.webp", alt: "", class: "flag-image mt-1 mr-3" %>
-													  <div class="media-body text-left country-text">
-													    <h5 class="mt-0 mb-0 font-weight-bold">Canberra</h5>
-													    <small>Australia</small>
+													  <%= image_tag "icon-centos.svg", alt: "", class: "flag-image mt-1 mr-3" %>
+													  <div class="media-body mt-2 text-left country-text">
+													    <h5 class="mt-0 mb-0 font-weight-bold">CentOS</h5>
+													    <small>8 x64</small>
 													  </div>
 													</div>
 								        </div>
 								      </label>  
 							      </div>
 							      <div class="col-lg-4 col-md-6 col-sm-6">
-							      	<input type="radio" id="all-location-radio-2" value="Sydney" class="radio isHidden" name="products[server_location]">
-								      <label for="all-location-radio-2" class="label w-100">
+							      	<%= radio_button_tag 'products[server_type]', "CoreOS 64", nil, class: "radio isHidden", id: "type-radio-2" %>
+								      <label for="type-radio-2" class="label w-100">
 								        <div class="card text-center rounded-0 product-card" class="label">
 								        	<div class="media p-3">
 								        	  <span class="deploy_checkbox_checkmark"></span>
-													  <%= image_tag "australia.webp", alt: "", class: "flag-image mt-1 mr-3" %>
-													  <div class="media-body text-left country-text">
-													    <h5 class="mt-0 mb-0 font-weight-bold">Sydney</h5>
-													    <small>Australia</small>
+													  <%= image_tag "icon-coreos.svg", alt: "", class: "flag-image mt-1 mr-3" %>
+													  <div class="media-body mt-2 text-left country-text">
+													    <h5 class="mt-0 mb-0 font-weight-bold">CoreOS</h5>
+													    <small>Stable x64</small>
+													  </div>
+													</div>
+								        </div>
+								      </label>  
+							      </div>
+							  	</div>
+							  </div>
+							  <div class="tab-pane fade" id="serverType32" role="tabpanel" aria-labelledby="serverType32-tab">
+							  	<div class="row">
+							  		<div class="col-lg-4 col-md-6 col-sm-6">
+							      	<%= radio_button_tag 'products[server_type]', "CentOS 32", nil, class: "radio isHidden", id: "type-radio-3" %>
+								      <label for="type-radio-3" class="label w-100">
+								        <div class="card text-center rounded-0 product-card" class="label">
+								        	<div class="media p-3">
+								        	  <span class="deploy_checkbox_checkmark"></span>
+													  <%= image_tag "icon-centos.svg", alt: "", class: "flag-image mt-1 mr-3" %>
+													  <div class="media-body mt-2 text-left country-text">
+													    <h5 class="mt-0 mb-0 font-weight-bold">CentOS</h5>
+													    <small>6 i368</small>
+													  </div>
+													</div>
+								        </div>
+								      </label>  
+							      </div>
+							      <div class="col-lg-4 col-md-6 col-sm-6">
+							      	<%= radio_button_tag 'products[server_type]', "Ubuntu", nil, class: "radio isHidden", id: "type-radio-4" %>
+								      <label for="type-radio-4" class="label w-100">
+								        <div class="card text-center rounded-0 product-card" class="label">
+								        	<div class="media p-3">
+								        	  <span class="deploy_checkbox_checkmark"></span>
+													  <%= image_tag "icon-coreos.svg", alt: "", class: "flag-image mt-1 mr-3" %>
+													  <div class="media-body mt-2 text-left country-text">
+													    <h5 class="mt-0 mb-0 font-weight-bold">Ubuntu</h5>
+													    <small>16.04 i368</small>
 													  </div>
 													</div>
 								        </div>
@@ -196,10 +234,84 @@
 							  <div class="tab-pane fade" id="asia" role="tabpanel" aria-labelledby="asia-tab">Home44</div> -->
 							</div>
 			      </div>
-				  </div>  
+				  </div>
+				  <div class="server-size">
+						<div class="product-heading">
+							<h4 class="mb-0">Server Size</h4>
+						</div>
+						<div class="row">
+				      <div class="col-lg-3 col-md-6 col-sm-6">
+				      	<%= radio_button_tag 'products[server_size]', "25 GB SSD", nil, class: "radio isHidden", id: "server-size-radio-1" %>
+					      <label for="server-size-radio-1" class="label w-100">
+					        <div class="card text-center rounded-0 product-card" class="label">
+					        	<span class="deploy_checkbox_checkmark"></span>
+					        	<div class="card-text text-center mt-3 mb-3">
+					        		<h6>25 GB SSD</h6>
+					        		<h5 class="text-primary mb-0"><b>$5</b>/mo</h5>
+					        		<small class="text-secondary">$0.007/h</small>
+					        		<hr class="line">
+					        		<h6 class="font-weight-normal"><b>1</b> CPU</h6>
+					        		<h6 class="font-weight-normal mb-0"><b>1024MB</b> Memory</h6>
+					        		<h6 class="font-weight-normal mb-0"><b>1000GB</b> Bandwidth</h6>
+					        	</div>
+					        </div>
+					      </label>  
+				      </div>
+				      <div class="col-lg-3 col-md-6 col-sm-6">
+				      	<%= radio_button_tag 'products[server_size]', "55 GB SSD", nil, class: "radio isHidden", id: "server-size-radio-2" %>
+					      <label for="server-size-radio-2" class="label w-100">
+					        <div class="card text-center rounded-0 product-card" class="label">
+					        	<span class="deploy_checkbox_checkmark"></span>
+					        	<div class="card-text text-center mt-3 mb-3">
+					        		<h6>55 GB SSD</h6>
+					        		<h5 class="text-primary mb-0"><b>$10</b>/mo</h5>
+					        		<small class="text-secondary">$0.015/h</small>
+					        		<hr class="line">
+					        		<h6 class="font-weight-normal"><b>1</b> CPU</h6>
+					        		<h6 class="font-weight-normal mb-0"><b>2048MB</b> Memory</h6>
+					        		<h6 class="font-weight-normal mb-0"><b>2000GB</b> Bandwidth</h6>
+					        	</div>
+					        </div>
+					      </label>  
+				      </div>
+				    </div>
+				  </div>   
+				  <div class="additional-feature">
+						<div class="product-heading">
+							<h4 class="mb-0">Additional Feature</h4>
+						</div>
+						<div class="mt-4">
+				      <div class="form-check">
+	              <label class="form-check-label additional-checkbox">
+	                 <%= check_box_tag 'products[additional-feature][1]', 'Enable IPv6', false, class: 'form-check-input' %>
+	                <span class="form-check-sign">
+	                  <span class="check"></span>
+	                </span>
+	                <label for="products[additional-feature][1]">
+		                Enable IPv6
+		                <i class="fa fa-question-circle-o"></i>
+		              </label>  
+	              </label>
+	            </div>
+	            <div class="form-check">
+	              <label class="form-check-label additional-checkbox">
+	                <%= check_box_tag 'products[additional-feature][2]', 'Enable Private Networking', false, class: 'form-check-input' %>
+	                <span class="form-check-sign">
+	                  <span class="check"></span>
+	                </span>
+	                <label for="products[additional-feature][2]">
+		                Enable Private Networking
+		                <i class="fa fa-question-circle-o"></i>
+		              </label>  
+	              </label>
+	            </div>
+				    </div>
+				  </div>    
 				</div>
-				<!-- <button type="submit" class="btn btn-primary">Delpoy</button> -->
-			</form>
+				<div class="deploy-btn text-right">
+				  <button type="submit" class="btn btn-primary">Deploy Now</button>
+				</div>  
+			<% end %>
 		</div>
 		<%= render 'layouts/partials/footer' %>
 	</div>

@@ -1,0 +1,124 @@
+<div class="content">
+	<form action="/create_product" method="post">
+		<div class="container-fluid">
+			<div class="choose-server-section">
+				<div class="product-heading">
+					<h4 class="mb-0">Choose Server</h4>
+				</div>
+				<div class="row">
+		      <div class="col-lg-3 col-md-6 col-sm-6">
+		      	<input type="radio" id="product-radio-1" value= "Large" class="radio isHidden" name="products[server]">
+			      <label for="product-radio-1" class="label w-100">
+			        <div class="card text-center rounded-0 product-card" class="label">
+			        	<span class="deploy_checkbox_checkmark"></span>
+			        	<%= image_tag "card1.svg", class: "card1-img" %>
+			        	<div class="card-text">
+			        		<h6>Large Server</h6>
+			        	</div>
+			        </div>
+			      </label>  
+		      </div>
+		      <div class="col-lg-3 col-md-6 col-sm-6">
+		        <input type="radio" id="product-radio-2" value= "Medium" class="radio isHidden" name="products[server]">
+			      <label for="product-radio-2" class="label w-100">
+			        <div class="card text-center rounded-0 product-card" class="label">
+			        	<span class="deploy_checkbox_checkmark"></span>
+			        	<%= image_tag "card1.svg", class: "card1-img" %>
+			        	<div class="card-text">
+			        		<h6>Medium Server</h6>
+			        	</div>
+			        </div>
+			      </label> 
+		      </div>
+		      <div class="col-lg-3 col-md-6 col-sm-6">
+		        <input type="radio" id="product-radio-3" value= "Small" class="radio isHidden" name="products[server]">
+			      <label for="product-radio-3" class="label w-100">
+			        <div class="card text-center rounded-0 product-card" class="label">
+			        	<span class="deploy_checkbox_checkmark"></span>
+			        	<%= image_tag "card1.svg", class: "card1-img" %>
+			        	<div class="card-text">
+			        		<h6>Small Server</h6>
+			        	</div>
+			        </div>
+			      </label> 
+		      </div>
+		    </div>
+		  </div>  
+		  <div class="server-location">
+				<div class="product-heading">
+					<h4 class="mb-0 mt-3">Server Location</h4>
+				</div>
+				<div class="pl-0 mt-4">
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+					  <li class="nav-item">
+						  <a class="nav-link server-tab pl-0 active" id="allLocation-tab" data-toggle="tab" href="#allLocation" role="tab" aria-controls="allLocation" aria-selected="true">
+						  	<font>All Locations</font>
+						  </a>
+					  </li>
+					  <!-- <li class="nav-item">
+						  <a class="nav-link server-tab pl-0" id="america-tab" data-toggle="tab" href="#america" role="tab" aria-controls="america" aria-selected="true">
+						  	<font>America</font>
+						  </a>
+					  </li>
+					  <li class="nav-item">
+						  <a class="nav-link server-tab pl-0" id="europe-tab" data-toggle="tab" href="#europe" role="tab" aria-controls="europe" aria-selected="true">
+						  	<font>Europe</font>
+						  </a>
+					  </li>
+					  <li class="nav-item">
+						  <a class="nav-link server-tab pl-0" id="australia-tab" data-toggle="tab" href="#australia" role="tab" aria-controls="australia" aria-selected="true">
+						  	<font>Australia</font>
+						  </a>
+					  </li>
+					  <li class="nav-item">
+						  <a class="nav-link server-tab pl-0" id="asia-tab" data-toggle="tab" href="#asia" role="tab" aria-controls="asia" aria-selected="true">
+						  	<font>Asia</font>
+						  </a>
+					  </li> -->
+					</ul>
+					<div class="tab-content" id="myTabContent">
+					  <div class="tab-pane fade show active" id="allLocation" role="tabpanel" aria-labelledby="allLocation-tab">
+					  	<div class="row">
+					  		<div class="col-lg-4 col-md-6 col-sm-6">
+					      	<input type="radio" id="all-location-radio-1" value="Canberra" class="radio isHidden" name="products[server_location]">
+						      <label for="all-location-radio-1" class="label w-100">
+						        <div class="card text-center rounded-0 product-card" class="label">
+						        	<div class="media p-3">
+						        	  <span class="deploy_checkbox_checkmark"></span>
+											  <%= image_tag "australia.webp", alt: "", class: "flag-image mt-1 mr-3" %>
+											  <div class="media-body text-left country-text">
+											    <h5 class="mt-0 mb-0 font-weight-bold">Canberra</h5>
+											    <small>Australia</small>
+											  </div>
+											</div>
+						        </div>
+						      </label>  
+					      </div>
+					      <div class="col-lg-4 col-md-6 col-sm-6">
+					      	<input type="radio" id="all-location-radio-2" value="Sydney" class="radio isHidden" name="products[server_location]">
+						      <label for="all-location-radio-2" class="label w-100">
+						        <div class="card text-center rounded-0 product-card" class="label">
+						        	<div class="media p-3">
+						        	  <span class="deploy_checkbox_checkmark"></span>
+											  <%= image_tag "australia.webp", alt: "", class: "flag-image mt-1 mr-3" %>
+											  <div class="media-body text-left country-text">
+											    <h5 class="mt-0 mb-0 font-weight-bold">Sydney</h5>
+											    <small>Australia</small>
+											  </div>
+											</div>
+						        </div>
+						      </label>  
+					      </div>
+					  	</div>
+					  </div>
+					  <!-- <div class="tab-pane fade" id="america" role="tabpanel" aria-labelledby="america-tab">Home...</div>
+					  <div class="tab-pane fade" id="europe" role="tabpanel" aria-labelledby="europe-tab">Home!!</div>
+					  <div class="tab-pane fade" id="australia" role="tabpanel" aria-labelledby="australia-tab">Home22</div>
+					  <div class="tab-pane fade" id="asia" role="tabpanel" aria-labelledby="asia-tab">Home44</div> -->
+					</div>
+	      </div>
+		  </div>  
+		</div>
+		<!-- <button type="submit" class="btn btn-primary">Delpoy</button> -->
+	</form>
+</div>

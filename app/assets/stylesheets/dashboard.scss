@@ -2,3 +2,102 @@
 	border: 0 !important;
 	box-shadow: unset !important;
 }
+.card1-img {
+	width: 65%;
+  margin: 2% auto;
+}
+.product-card {
+	background: transparent !important;
+  box-shadow: none !important;
+  border: 1px solid #d0d1d4 !important;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 8px 16px 0px rgba(10, 14, 29, 0.04), 
+    0px 8px 64px 0px rgba(10, 14, 29, 0.08) !important;
+  }
+}
+.card-text {
+  color: #142149;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+  h6 {
+    text-transform: unset !important;
+  }
+}
+.product-heading h4{
+	font-size: 24px;
+  line-height: 24px;
+  color: #1e2736;
+  font-weight: 400;
+}
+
+// Products page design 
+//colors
+$white: #fff;
+$color_ebony_4_approx: rgba(10, 14, 29, 0.04);
+$color_ebony_8_approx: rgba(10, 14, 29, 0.08);
+
+//fonts
+$font_0: FontAwesome;
+
+.isHidden {
+	display: none;
+}
+.radio:checked + label {
+	.product-card {
+		background-color: $white !important;
+		box-shadow: 0 8px 16px 0 $color_ebony_4_approx, 0 8px 64px 0 $color_ebony_8_approx !important;
+		border-color: transparent !important;
+	}
+	.deploy_checkbox_checkmark {
+		display: block;
+		position: absolute;
+		top: -1px !important;
+		right: -1px;
+		width: 34px;
+		height: 34px;
+		background-size: cover;
+		opacity: 1;
+		transition: all 0.2s ease-in;
+		&:before {
+			position: absolute;
+			top: -2px;
+			right: 0;
+			height: 20px;
+			width: 20px;
+			font-size: 19px;
+			line-break: 20px;
+			text-align: center;
+			color: $white;
+			content: "\f00c";
+			font-family: $font_0;
+		}
+	}
+}
+.server-tab {
+  background-color: transparent !important;
+	font {
+    color: #868b93;
+		&:hover{
+		  color: #000;
+		}
+	}
+}
+.server-tab.active font{
+	color: #000;
+	border-bottom: 2px solid blue;
+	padding-bottom: 10px;
+}
+.flag-image{
+	width: 60px;
+}
+.country-text {
+  h5 {
+		white-space: normal;
+		line-height: 20px;
+		color: #1e2736;
+		font-weight: 500;
+		font-size: 17px;
+  }		
+}

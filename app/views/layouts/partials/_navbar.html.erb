@@ -4,8 +4,10 @@
     <div class="navbar-wrapper">
     	<% if request.path == "/" %>
         <a class="navbar-brand" href="javascript:;">Dashboard</a>
-      <% else %>
+      <% elsif request.path == prodcuts_path %>
         <a class="navbar-brand" href="javascript:;">Products</a>
+      <% else request.path == new_product_path %>  
+        <a class="navbar-brand" href="javascript:;">Add Products</a>
       <% end %>  
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">

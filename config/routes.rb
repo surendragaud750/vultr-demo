@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   #Routes for products
   get '/prodcuts' => "dashboard#products"
   post '/create_product' => "dashboard#create_product"
+  get '/new_product' => "dashboard#new_product"
 end

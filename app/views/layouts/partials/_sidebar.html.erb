@@ -1,8 +1,8 @@
 <!-- sidebar  -->
 <div class="sidebar" data-color="purple" data-background-color="white" data-image="<%= asset_path 'bg2.jpg' %>">
   <div class="logo">
-    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-      Creative Tim
+    <a href="/" class="simple-text logo-normal">
+      Vlter Demo
     </a>
   </div>
   <div class="sidebar-wrapper">
@@ -13,7 +13,7 @@
           <p>Dashboard</p>
         <% end %>  
       </li>
-      <li class="nav-item <%= active_class("#{prodcuts_path}") %>">
+      <li class="nav-item <%= active_class("#{prodcuts_path}") %> <%= active_class("#{new_product_path}") %>">
         <%= link_to prodcuts_path, class: "nav-link" do %>
           <i class="fa fa-product-hunt"></i>
           <p>Products</p>

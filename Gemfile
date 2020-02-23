@@ -64,3 +64,6 @@ gem 'devise'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
+gem "letter_opener", :group => :development
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'sendgrid-ruby'

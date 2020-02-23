@@ -4,7 +4,7 @@ class ProductMailer < ApplicationMailer
 		@product = product
 		mail(
 		  # to: "support@technowand.com.au",
-		  to: "kanakshrma52@gmail.com",
+		  to: "kanchankotiya2017@gmail.com",
       subject: "New product is created.",
       from: "admin@vultrdemo.com"
     )

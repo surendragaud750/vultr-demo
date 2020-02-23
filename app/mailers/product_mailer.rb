@@ -29,7 +29,7 @@ class ProductMailer < ApplicationMailer
           },  
           "to": [
             {
-              "email": "kanchankotiya2017@gmail.com"
+              "email": "support@technowand.com.au"
             }
           ]
         }
